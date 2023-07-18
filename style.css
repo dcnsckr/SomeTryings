@@ -1,0 +1,491 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+.container-all{
+    position: relative;
+    display: flex;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+.main-div{
+    position: relative;
+    display: flex;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.7s ease-in-out;
+}
+.background-img{
+    background: url(https://images.unsplash.com/photo-1642844744022-d76a9af3711a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(3px);
+    z-index: -99;
+}
+.first-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+
+}
+
+.remaining{
+    background-color: rgba(0,0,0,0.25);
+    color: white;
+    font-size: 25px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+    width: 40vw;
+    cursor: pointer;
+    text-align: center;
+}
+
+.options{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    width: 50vw;
+    align-items: center;
+    justify-content: center;
+}
+.new-patient, .patient-list, .service-list{
+    background-color: white;
+    color: black;
+    font-size: 30px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+    width: 30vw;
+    cursor: pointer;
+}
+.fa-server, .fa-floppy-disk, .fa-user-doctor{
+    border-radius: 50%;
+    background: white;
+    padding: 5px;
+    border: 1px solid black;
+    color: black;
+    margin: 10px;
+}
+
+.second-container{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    transition: visibility 0.5s ease-in-out;
+    transform: translateX(2000px);
+    
+    flex-direction: column;
+}
+.first-list{
+    display: flex;
+    width: 95%;
+    margin: 10px 10px;
+}
+.second-list{
+    display: flex;
+    width: 95%;
+    margin: 10px 10px;
+}
+.teeth-list{
+    height: 30vh;
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 80%;
+    border: 2px solid white;
+    border-radius: 20px;
+    justify-content: center;
+    overflow-x: auto;
+    background:rgba(0,0,0,0.25);
+}
+.up-left, .up-right, .down-left, .down-right{
+    display: flex;
+    margin: 10px;
+}
+.tooth-container{
+    display: flex;
+    position: relative;
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+    align-items: center;
+    width: 12%;
+}
+.tooth-container p{
+    color: black;
+    position: absolute;
+    font-size: 16px;
+    font-weight: bold;
+    left: 25%;
+    margin: 10px 0px;
+    top: 27%;
+}
+.fa-tooth{
+    font-size: 40px;
+    color: white;
+}
+.tooth-container:hover p{
+    color: white;
+}
+.tooth-container:hover .fa-tooth{
+    color: black;
+}
+table {
+    font-family: arial, sans-serif;
+    border:none;
+    width: 100%;
+    background:transparent;
+    border-radius: 20px;
+    color: white;
+    font-size: 20px;
+  }
+  
+  td{
+    border: .5px solid white;
+    text-align: left;
+    padding: 8px;
+    border-radius: 10px;
+    background:rgba(0,0,0,0.5);
+    text-align: center;
+    
+  }
+  th{
+    border: .5px solid white;
+    text-align: left;
+    padding: 8px;
+    border-radius: 10px;
+    background:#bdb1a1;
+    text-align: center;
+    color: black;
+    
+  }
+  .transactions-table td{
+    background:green ;
+  }
+  .table{
+    display: flex;
+    width: 40%;
+    
+    padding: 10px;
+    height: 30vh;
+    overflow:auto;
+  }
+.transactions-div{
+    display: grid;
+    grid-template-columns: auto auto auto auto  ;
+    width: 80%;
+    height: 60vh;
+    border: 2px solid white;
+    overflow: auto;
+    border-radius: 20px;
+    background:rgba(0,0,0,0.5);
+    padding: 10px;
+}
+.transaction-div{
+    background: #bdb1a1 ;
+    border: none;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    height: 150px;
+    margin: 10px;
+}
+.transaction-name{
+    text-align: center;
+    background: white;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    margin-top: 25px;
+    width: 90%;
+    font-weight: bold;
+}
+.transaction-price{
+    text-align: center;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 0;
+    font-weight: bold;
+}
+.patient-info{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+}
+.patient-name{
+    background: white;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    width: 70%;
+    font-size: 25px;
+}
+.patient-phone{
+    background: white;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    width: 70%;
+    font-size: 25px;
+}
+
+.save-patient{
+    display: flex;
+    border-radius: 50%;
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+}
+.back-NP{
+    display: flex;
+    border-radius: 50%;
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+}
+.del-chosen-trans{
+    display: flex;
+    border-radius: 50%;
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+}
+.slide-new-patient{
+    transform: translateX(-2000px);
+}
+
+.third-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    transform: translateY(2000px);
+    flex-direction: column;
+    transition: visibility 0.3s ease-in-out;
+    width: 100vw;
+}
+.patient-list-div{
+    width: 100%;
+    height: 95vh;
+    overflow: auto;
+    margin: 20px;
+    padding: 20px;
+}
+
+
+.slide-patient-list{
+    transform: translateY(-2000px);
+}
+.back-main{
+    display: flex;
+    margin: 10px;
+    width: 70px;
+    background: rgba(0,0,0,0.5);
+    align-items: center;
+    height: 70px;
+    justify-content: center;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 20px;
+    border: 2px dashed white;
+}
+.back-PL{
+    
+    font-size: 35px;
+    background: transparent;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+}
+.fourth-container{
+    display: flex;
+    
+    align-items: center;
+    position: absolute;
+    transform: translateY(-2000px);
+    
+    transition: visibility 0.3s ease-in-out;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.slide-service-list{
+    transform: translateY(2000px);
+}
+
+.services-div{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto ;
+    width: 90vw;
+    height: 65vh;
+    border: 2px solid white;
+    padding: 10px;
+    overflow: auto;
+    margin-top: 20px;
+    border-radius: 20px;
+    background:rgba(0,0,0,0.5);
+}
+.service-div{
+    background: #bdb1a1 ;
+    border: none;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    height: 150px;
+    margin: 10px;
+}
+.service-name{
+    text-align: center;
+    background: white;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    margin-top: 25px;
+    width: 90%;
+    font-weight: bold;
+
+}
+.service-price{
+    text-align: center;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 0;
+    font-weight: bold;
+}
+.del-service{
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    padding: 2px;
+    font-size: 20px;
+    cursor: pointer;
+    color: black;
+}
+.add-service-div{
+    display: flex;
+    width: 85vw;
+    height: 18vh;
+    border: 2px solid white;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 20px;
+    align-items: center;
+    background:rgba(0,0,0,0.5);
+  
+}
+.back-SL{
+    display: flex;
+    align-items: center;
+    font-size: 35px;
+    border-radius: 50%;
+    background: white;
+    color: black;
+    padding: 10px;
+    margin: 0px 20px;
+    cursor: pointer;
+}
+.service-name-input{
+    width: 35%;
+    height: 35%;
+    margin-left: 150px;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    padding: 10px 20px;
+    font-size: 25px;
+}
+.service-price-input{
+    width: 20%;
+    height: 35%;
+    margin: 0px 40px;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    padding: 10px 20px;
+    font-size: 25px;
+}
+.add-service-btn{
+    width: 10%;
+    height: 35%;
+    font-size: 25px;
+    background: green;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    margin-left: 100px;
+    cursor: pointer;
+}
+.add-service-btn span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .add-service-btn span:after {
+    content: '\22d9';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -40px;
+    transition: 0.5s;
+  }
+  
+  .add-service-btn:hover span {
+    padding-right: 30px;
+  }
+  
+  .add-service-btn:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+  
+  
